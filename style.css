@@ -42,20 +42,18 @@ h1 em{font-style:italic;color:var(--signal)}
 .lede{max-width:520px;margin:0;color:var(--dust);font-size:clamp(15px,1.5vw,17px);text-wrap:pretty}
 .lede b{color:var(--ink);font-weight:500}
 .lede strong{color:var(--ink);font-weight:700}
-.capture{display:flex;align-items:center;gap:6px;padding:6px;border-radius:999px;background:rgba(20,18,18,.85);border:1px solid #262323;width:min(440px,100%);backdrop-filter:blur(6px)}
-.capture input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:var(--ink);font:400 14px var(--f-body);padding:8px 14px}
-.capture input::placeholder{color:#5f5958}
-.capture:focus-within{border-color:#4a2a29}
 .cta{border:0;border-radius:999px;background:var(--signal);color:var(--signal-ink);font:500 13px/1 var(--f-body);padding:12px 18px;cursor:pointer;white-space:nowrap;transition:transform .15s,filter .2s}
 .cta:hover{filter:brightness(1.12)}
 .cta:active{transform:scale(.97)}
-.cta:focus-visible,.pill:focus-visible,.capture input:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+.cta:focus-visible,.pill:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
 .form-note{min-height:18px;font:400 12px var(--f-mono);color:var(--dust);margin:-8px 0 0}
+/* botões que levam ao formulário do WhatsApp */
+.cta-lg{display:inline-flex;align-items:center;text-decoration:none;padding:16px 28px;font-size:15px}
 .hero-foot{position:relative;z-index:2;margin-top:auto;padding-bottom:28px}
 .hero-foot .wrap{display:flex;justify-content:space-between;gap:16px;font:400 11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:#6b6564}
 
 /* SECTIONS */
-section{border-top:1px solid var(--line)}
+section{border-top:1px solid var(--line);scroll-margin-top:60px}
 .sec{padding-block:clamp(72px,10vw,128px)}
 .sec-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end;margin-bottom:56px}
 .sec-head .tag{grid-column:1/4;font:500 11px/1 var(--f-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--signal)}
@@ -154,8 +152,6 @@ footer .footer-mark{width:240px;height:240px;margin:8px auto -48px;mix-blend-mod
 }
 @media (max-width:560px){
   .services,.steps{grid-template-columns:1fr}
-  .capture{flex-direction:column;border-radius:22px;align-items:stretch}
-  .capture input{text-align:center;padding:12px}
   .hero-foot .wrap span:first-child{display:none}
   .ethic-list li{grid-template-columns:1fr;gap:4px}
   .wa-form{grid-template-columns:1fr}
@@ -181,7 +177,7 @@ h1 em,h2 em,.ethic-big em{font-style:normal}
 .hero-copy>.eyebrow{animation-delay:.1s}
 .hero-copy>h1{animation-delay:.22s}
 .hero-copy>.lede{animation-delay:.42s}
-.hero-copy>.capture{animation-delay:.56s}
+.hero-copy>.cta{animation-delay:.56s;animation-fill-mode:backwards} /* sem "forwards" para o efeito magnético continuar funcionando */
 #field{animation:fadein 2.2s ease .2s both}
 .nav{animation:fadein 1s ease both}
 /* pontinho piscando */

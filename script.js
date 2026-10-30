@@ -293,23 +293,6 @@
     }
   });
 
-  /* ---------- Formulários ---------- */
-  function wire(formId) {
-    const f = document.getElementById(formId), inp = f.querySelector('input'), note = document.getElementById(formId + '-note');
-    f.addEventListener('submit', e => {
-      e.preventDefault();
-      const v = inp.value.trim();
-      const isMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-      const digits = v.replace(/\D/g, '');
-      if (!isMail && !(digits.length >= 10 && digits.length <= 13)) {
-        note.textContent = 'Digite um e-mail válido ou um WhatsApp com DDD, ex: (92) 99999-0000.';
-        inp.focus(); return;
-      }
-      note.textContent = 'Formulário de demonstração: conecte ao WhatsApp ou CRM da Space para receber os contatos.';
-    });
-  }
-  wire('lead'); wire('lead2');
-
   /* ---------- Formulário que abre o WhatsApp com nome, área e mensagem ---------- */
   const waForm = document.getElementById('wa-form'), waNote = document.getElementById('wa-form-note');
   waForm.addEventListener('submit', e => {
