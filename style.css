@@ -136,7 +136,7 @@ section{border-top:1px solid var(--line);scroll-margin-top:60px}
 .wa-float:hover{transform:translateY(-2px);filter:brightness(1.1)}
 .wa-float:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
-footer{border-top:1px solid var(--line)}
+footer{border-top:1px solid var(--line);padding-bottom:64px} /* espaço para o botão fixo do WhatsApp não cobrir o texto */
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;padding-block:32px 40px;font:400 12px var(--f-mono);color:#6b6564}
 footer img{height:22px;width:auto;display:block}
 /* símbolo da Space no fim da página; o fundo preto da imagem some no fundo do site */
